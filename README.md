@@ -1,0 +1,2 @@
+# mogo-landing
+training project
