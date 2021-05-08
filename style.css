@@ -289,44 +289,44 @@ ul, ol {
 
 
 
-/* about */
-.about {
+/* card */
+.card {
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
 }
 
-.about__item {
+.card__item {
     width: 380px;
     position: relative;
 
     background-color: #95e1d3;
 }
 
-.about__item:hover .about__img {
+.card__item:hover .card__img {
     transform: translate3d(-10px, -10px, 0);
 }
 
-.about__item:hover .about__img img {
+.card__item:hover .card__img img {
     opacity: .1;
 }
 
-.about__item:hover .about__text { /* не стандартно */
+.card__item:hover .card__text { /* не стандартно */
     transform: translate3d(-10px, -10px, 0);
     opacity: 1;
 }
 
-.about__img {
+.card__img {
     background: linear-gradient(to bottom, #f38181, #fce38a);
     transition: transform .2s linear;
 }
 
-.about__img img {
+.card__img img {
     display: block;
     transition: opacity .1s linear;
 }
 
-.about__text {  /* не стандартно */
+.card__text {  /* не стандартно */
     display: flex;
     height: 100%;
     width: 100%;
@@ -623,6 +623,11 @@ ul, ol {
     translateY(-50%)
     rotate(90deg);
 }
+
+
+
+/* meet our team */
+
 
 /* 
 font-family: 'Kaushan Script', cursive;
