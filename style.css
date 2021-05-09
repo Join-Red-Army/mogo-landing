@@ -298,20 +298,22 @@ ul, ol {
 
 .card__item {
     width: 380px;
-    position: relative;
+}
 
+.card__inner {
+    position: relative;
     background-color: #95e1d3;
 }
 
-.card__item:hover .card__img {
+.card__inner:hover .card__img {
     transform: translate3d(-10px, -10px, 0);
 }
 
-.card__item:hover .card__img img {
+.card__inner:hover .card__img img {
     opacity: .1;
 }
 
-.card__item:hover .card__text { /* не стандартно */
+.card__inner:hover .card__text { /* не стандартно */
     transform: translate3d(-10px, -10px, 0);
     opacity: 1;
 }
@@ -348,6 +350,25 @@ ul, ol {
     left: 0;
     z-index: 2;
 }
+
+.card__info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card__name {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.card__prof {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    color: #999;
+}
+
 
 
 
@@ -627,6 +648,36 @@ ul, ol {
 
 
 /* meet our team */
+.social {
+    display: flex;
+}
+
+.social__item {
+    width: 55px;
+    height: 55px;
+    padding: 12px 10px;
+
+    background-color: #fce38a;
+    border-right: 1px solid #f38181;
+
+    font-size: 30px;
+    text-decoration: none;
+    color: #f38181;
+    line-height: 1;
+
+    transition: 
+        background-color .1s linear,
+        color .1s linear;
+}
+
+.social__item:last-child {
+    border-right: none;
+}
+
+.social__item:hover {
+    background-color: #f38181;
+    color: #fff;
+}
 
 
 /* 
