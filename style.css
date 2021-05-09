@@ -371,7 +371,6 @@ ul, ol {
 
 
 
-
 /* statistics */
 .statistics {
     background-color: #95e1d3;
@@ -461,7 +460,6 @@ ul, ol {
     bottom: -80px;
     right: 0;
     z-index: 1;
-
 }
 
 
@@ -679,6 +677,13 @@ ul, ol {
     color: #fff;
 }
 
+
+
+/* logos */
+.logos {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* 
 font-family: 'Kaushan Script', cursive;
