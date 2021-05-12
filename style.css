@@ -251,6 +251,11 @@ ul, ol {
     background-color: #f8f8f8;
 }
 
+.section--clients {
+    background: url("img/clients-bg.jpg") #f5f5f5 center no-repeat;
+    background-size: cover;
+}
+
 .section__header {
     width: 100%;
     max-width: 950px;
@@ -577,12 +582,13 @@ ul, ol {
 
 .reviews__item {
     /* display: flex; */
-    padding-left: 205px;
+    padding-left: 255px;
     position: relative;
 }
 
 .reviews__photo {
     border: 2px solid #95e1d3;
+    border-radius: 50%;
     position: absolute;
     top: 0;
     left: 0;
@@ -761,7 +767,57 @@ ul, ol {
 
 
 /* happy clients */
+.clients {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
 
+.clients__item {
+    width: 50%;
+    padding: 0 45px 0 175px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.clients__photo {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 1;
+}
+
+.clients__name {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.clients__prof {
+    font-weight: 300;
+    font-style: italic;
+    color: #333
+}
+
+.clients__text {
+    color: #999;
+}
+
+.clients__text::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 15px 0;
+
+    background-color: #f38181;
+}
 
 /* 
 font-family: 'Kaushan Script', cursive;
