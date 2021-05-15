@@ -1046,9 +1046,11 @@ ul, ol {
 }
 
 .blogs__title {
+    display: block;
+    margin-bottom: 5px;
     color: #333;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.5;
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -1066,8 +1068,20 @@ ul, ol {
 
 
 /* 3-я колонка footer Instagram */
+.instagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+.instagram__item {
+    width: 32.3333%;
+    border-bottom: 1px solid #fff;
+}
 
+.instagram__item img {
+    display: block;
+}
 
 
 /* form subscribe */
@@ -1133,8 +1147,20 @@ ul, ol {
 }
 
 
-/* footer col 2 */
+/* copyright */
+.copyright {
+    padding: 20px 0;
 
+    border-top: 1px solid #e5e5e5;
+
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.copyright span {
+    color: #f38181
+}
 
 /* 
 font-family: 'Kaushan Script', cursive;
