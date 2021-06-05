@@ -29,9 +29,9 @@ document.addEventListener('click', (ev) => {
   }
   // меню-аккордион
   if (ev.target.closest('.accordion__header')) {
-    let currentYCoord = window.pageYOffset; 
     let accordionItem = ev.target.closest('.accordion__item');
     // accordionItem.classList.toggle('active');
+    let currentYCoord = window.pageYOffset + 0.5;
     if (accordionItem.classList.contains('active')) {
       accordionItem.classList.remove('active');
     } else {

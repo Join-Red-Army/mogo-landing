@@ -614,15 +614,20 @@ ul, ol {
 .accordion__item {
     margin-bottom: 10px;
     border: 1px solid #e5e5e5;
+    border-bottom-color: transparent;
+}
+
+.accordion__item.active {
+    border-bottom-color: #e5e5e5;
 }
 
 .accordion__item.active .accordion__content {
     display: block;
 }
 
-.accordion__item.active .accordion__header {
+/* .accordion__item.active .accordion__header {
     border-bottom-color: #e5e5e5;
-}
+} */
 
 .accordion__item.active .accordion__header::after {
     transform:
@@ -634,7 +639,7 @@ ul, ol {
     padding: 15px 20px 15px 65px;
     position: relative;
 
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .accordion__header:hover {
