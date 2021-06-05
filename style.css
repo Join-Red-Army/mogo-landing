@@ -675,7 +675,7 @@ ul, ol {
 
     transform: 
         translateY(-50%)
-        rotate(180deg);
+        rotate(-180deg);
     
     transition: transform .2s linear;
 }
