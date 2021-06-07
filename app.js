@@ -3,11 +3,10 @@ let burgerMenu = document.querySelector('.nav-toggle');
 let nav = document.querySelector('.nav');
 let navElements = document.querySelectorAll('[data-scroll]');
 let intro = document.getElementById('intro');
-let introHeight = intro.offsetHeight; // переменная не нужна
 let introSliderTimer = setInterval(() => changeActiveSliderItem(), 5000);
-
 // при загрузке страницы проверить, нужно ли показать фиксированый header
 showFixedHeader();
+
 
 window.addEventListener('scroll', () => {
   showFixedHeader();
@@ -55,7 +54,7 @@ document.addEventListener('click', (ev) => {
 
 // если окно прокручено ниже блока intro, то header получит класс fixed
 function showFixedHeader() {
-  if (window.scrollY >= introHeight - header.clientHeight) {
+  if (window.scrollY >= intro.offsetHeight - header.clientHeight) {
     header.classList.add('fixed');
   } else {
     header.classList.remove('fixed');
@@ -107,8 +106,10 @@ function changeActiveSliderItem() {
 }
 
 function changeIntroText(activeItem) {
+  let currentYCoord = window.pageYOffset + 0.5;  // костыль
   let introTitle = document.getElementById('intro__title');
   introTitle.innerText = activeItem.dataset.titleText;
   document.querySelectorAll('.slider__item').forEach(el => el.classList.remove('active'));
   activeItem.classList.add('active');
+  window.scrollTo(0, currentYCoord); // костыль 
 }
