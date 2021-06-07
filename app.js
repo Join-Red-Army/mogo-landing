@@ -4,6 +4,7 @@ let nav = document.querySelector('.nav');
 let navElements = document.querySelectorAll('[data-scroll]');
 let intro = document.getElementById('intro');
 let introHeight = intro.offsetHeight; // переменная не нужна
+let introSliderTimer = setInterval(() => changeActiveSliderItem(), 5000);
 
 // при загрузке страницы проверить, нужно ли показать фиксированый header
 showFixedHeader();
@@ -31,7 +32,7 @@ document.addEventListener('click', (ev) => {
   if (ev.target.closest('.accordion__header')) {
     let accordionItem = ev.target.closest('.accordion__item');
     // accordionItem.classList.toggle('active');
-    let currentYCoord = window.pageYOffset + 0.5;
+    let currentYCoord = window.pageYOffset + 0.5;  // костыль
     if (accordionItem.classList.contains('active')) {
       accordionItem.classList.remove('active');
     } else {
@@ -40,6 +41,13 @@ document.addEventListener('click', (ev) => {
       accordionItem.classList.add('active');
     }
     window.scrollTo(0, currentYCoord); // костыль  
+  }
+  // intro-slider
+  if (ev.target.closest('.slider__item')) {
+    let activeSliderItem = ev.target.closest('.slider__item');
+    changeIntroText(activeSliderItem);
+    clearInterval(introSliderTimer);
+    introSliderTimer = setInterval(() => changeActiveSliderItem(), 5000);
   }
 
 });
@@ -86,4 +94,21 @@ function highlightСurrentNavLink() {
       el.classList.remove('active');
     }
   })
+}
+
+
+// #intro-slider
+function changeActiveSliderItem() {
+  let nextSliderItem = document.querySelector('.slider__item.active').nextElementSibling;
+  if (!nextSliderItem) {
+    nextSliderItem = document.getElementById('slider__items').firstElementChild;
+  }
+  return(changeIntroText(nextSliderItem));
+}
+
+function changeIntroText(activeItem) {
+  let introTitle = document.getElementById('intro__title');
+  introTitle.innerText = activeItem.dataset.titleText;
+  document.querySelectorAll('.slider__item').forEach(el => el.classList.remove('active'));
+  activeItem.classList.add('active');
 }
